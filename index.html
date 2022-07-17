@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <title>myDataGraphs</title>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="description" content="" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+    
+    <script>
+const fs = require('fs');
+const readline = require('readline');
+
+const labels = ["SET","GET","INCR","LPUSH","RPUSH","LPOP","RPOP","SADD","HSET","SPOP","ZADD","ZPOPMIN","LRANGE_100","LRANGE_300","LRANGE_600","MEST"];
+const data1o = {};
+const data2o = {};
+
+
+
+
+const data1 = getData('./dataSets/dataLaptop.txt');
+console.log(cleanData(data1));
+
+const data2 = getData('./dataSets/dataServer.txt');
+console.log(cleanData(data2));
+
+
+function cleanData(data){
+  const obj = {};
+
+  data = data.replaceAll(/(\b requests per second\b)|(\n)/g,"");
+
+  const lines = data.split(/\n?\r/);
+
+  for (let index = 0; index < lines.length; index++) {
+    let linesTemp = lines[index].split(":")
+    obj[linesTemp[0]] = linesTemp[1].replace(" ","");
+    
+  }
+  return obj;
+}
+
+function getData(fileName) {
+    
+  try {
+    const data = fs.readFileSync(fileName, 'utf8');
+    return data
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+        /* const labels = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+        ]; */
+      
+        const data = {
+          labels: labels,
+          datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+          }]
+        };
+      
+        const config = {
+          type: 'line',
+          data: data,
+          options: {}
+        };
+      </script>
+      
+      <script>
+        const myChart = new Chart(
+          document.getElementById('myChart'),
+          config
+        );
+      </script>
+      
+
+
+
+  
+</body>
+
+</html>
