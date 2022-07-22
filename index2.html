@@ -17,104 +17,108 @@
 </head>
 
 <body>
-<div>
-  <canvas id="myChart" width="150" height="70"></canvas>
-</div>
-    <script>
-      
-      const fData1 = {
-  PING_INLINE: '27875.86',
-  PING_BULK: '28050.49',
-  SET: '27881.04',
-  GET: '27806.10',
-  INCR: '27813.83',
-  LPUSH: '27906.98',
-  RPUSH: '27938.16',
-  LPOP: '27938.16',
-  RPOP: '27837.06',
-  SADD: '27940.76',
-  HSET: '27878.45',
-  SPOP: '27940.76',
-  ZADD: '27940.76',
-  ZPOPMIN: '27969.42',
-  'LPUSH (needed to benchmark LRANGE)': '27969.42',
-  'LRANGE_100 (first 100 elements)': '19448.95',
-  'LRANGE_300 (first 300 elements)': '8804.88',
-  'LRANGE_500 (first 450 elements)': '6576.06',
-  'LRANGE_600 (first 600 elements)': '5250.45',
-  'MSET (10 keys)': '27741.82'
-}
-      const fData2 = {
-  PING_INLINE: '21592.05',
-  PING_BULK: '27073.37',
-  SET: '27051.40',
-  GET: '27070.93',
-  INCR: '27029.46',
-  LPUSH: '27048.96',
-  RPUSH: '27007.56',
-  LPOP: '27073.37',
-  RPOP: '27066.04',
-  SADD: '27090.48',
-  HSET: '27014.86',
-  SPOP: '27144.41',
-  ZADD: '27102.72',
-  ZPOPMIN: '27092.93',
-  'LPUSH (needed to benchmark LRANGE)': '26975.99',
-  'LRANGE_100 (first 100 elements)': '19181.59',
-  'LRANGE_300 (first 300 elements)': '8822.75',
-  'LRANGE_500 (first 450 elements)': '6597.47',
-  'LRANGE_600 (first 600 elements)': '5230.58',
-  'MSET (10 keys)': '27066.04'
-}
+  <div>
+    <canvas id="myChart" width="150" height="70"></canvas>
+  </div>
+  <script>
 
-        /* const labels = [
-          'SET',
-          'GET',
-          'INCR',
-          'LPUSH',
-          'LPOP',
-          'RPOP',
-        ]; */
-      
-        const data1 = {
-          /* labels: labels, */
-          datasets: [{
-            label: 'Laptop',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(25, 99, 132)',
-            borderSkipped: false,
-            borderWidth: 2,
-            data: fData1,
-          },{
-            label: 'Serwer',
-            backgroundColor: 'rgb(25, 99, 132)',
-            borderColor: 'rgb(25, 99, 132)',
-            data: fData2,
-          }] 
-        };
-      
-        const config = {
-          type: 'bar',
-          data: data1,
-          options: {
-            parsing: {
-              normalised: true
-            }
-          }
-        };
-      </script>
-      
-      <script>
-        const myChart = new Chart(
-          document.getElementById('myChart'),
-          config
-        );
-      </script>
-      
+    const fData1 = {
+      PING_INLINE: '42176.30',
+      PING_BULK: '43177.89',
+      SET: '39840.64',
+      GET: '41771.09',
+      INCR: '40371.42',
+      LPUSH: '38595.14',
+      RPUSH: '39370.08',
+      LPOP: '38714.67',
+      RPOP: '39556.96',
+      SADD: '41858.52',
+      HSET: '38610.04',
+      SPOP: '42176.30',
+      ZADD: '41203.13',
+      ZPOPMIN: '42390.84',
+      'LPUSH (needed to benchmark LRANGE)': '39277.30',
+      'LRANGE_100 (first 100 elements)': '27085.59',
+      'LRANGE_300 (first 300 elements)': '16937.67',
+      'LRANGE_500 (first 450 elements)': '13039.51',
+      'LRANGE_600 (first 600 elements)': '10613.46',
+      'MSET (10 keys)': '28743.89'
+    }
+    const fData2 = {
+      PING_INLINE: '24660.91',
+      PING_BULK: '28628.69',
+      SET: '22851.92',
+      GET: '26089.22',
+      INCR: '22851.92',
+      LPUSH: '22055.58',
+      RPUSH: '21848.37',
+      LPOP: '22237.04',
+      RPOP: '22361.36',
+      SADD: '26041.67',
+      HSET: '21758.05',
+      SPOP: '24943.88',
+      ZADD: '22904.26',
+      ZPOPMIN: '24919.01',
+      'LPUSH (needed to benchmark LRANGE)': '21312.87',
+      'LRANGE_100 (first 100 elements)': '18122.51',
+      'LRANGE_300 (first 300 elements)': '11633.32',
+      'LRANGE_500 (first 450 elements)': '9621.86',
+      'LRANGE_600 (first 600 elements)': '8057.37',
+      'MSET (10 keys)': '19338.62'
+    }
 
 
+    const labels = [
+      'SET',
+      'GET',
+      'INCR',
+      'LPUSH',
+      'LPOP',
+      'RPOP',
+    ];
 
-  
+    const data1 = {
+      labels: labels,
+      datasets: [{
+        label: 'z replikacją',
+        backgroundColor: 'rgb(68, 68, 68)',
+        borderColor: 'rgb(0, 0, 0,1)',
+        borderSkipped: false,
+        borderWidth: 0,
+        data: fData1,
+      }, {
+        label: 'bez replikacji',
+        backgroundColor: 'rgb(92, 92, 92)',
+        borderColor: 'rgb(0, 0, 0,1)',
+        borderWidth: 0,
+        data: fData2,
+      }]
+    };
+
+    const config = {
+      type: 'bar',
+      data: data1,
+      options: {
+        parsing: {
+          normalised: true
+        }
+      }
+    };
+  </script>
+
+  <script>
+    Chart.defaults.font.size = 12;
+    Chart.defaults.font.family = 'Times New Roman';
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+
+
+
+
+
 </body>
 
 </html>

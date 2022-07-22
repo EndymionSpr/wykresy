@@ -10,40 +10,40 @@
 
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <meta name="Z dockerem i bez dockera" content="" />
+  <meta name="description" content="" />
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 <body>
-
   <div>
     <canvas id="myChart" width="150" height="70"></canvas>
   </div>
   <script>
+
     const fData1 = {
-      PING_INLINE: '93109.87',
-      PING_BULK: '98814.23',
-      SET: '98619.32',
-      GET: '96432.02',
-      INCR: '97465.88',
-      LPUSH: '96432.02',
-      RPUSH: '93632.96',
-      LPOP: '93632.96',
-      RPOP: '89847.26',
-      SADD: '97087.38',
-      HSET: '93109.87',
-      SPOP: '101010.10',
-      ZADD: '96153.85',
-      ZPOPMIN: '95969.28',
-      'LPUSH (needed to benchmark LRANGE)': '89928.05',
-      'LRANGE_100 (first 100 elements)': '61690.31',
-      'LRANGE_300 (first 300 elements)': '30515.72',
-      'LRANGE_500 (first 450 elements)': '21668.47',
-      'LRANGE_600 (first 600 elements)': '17232.47',
-      'MSET (10 keys)': '74404.77'
-    }
+  PING_INLINE: '63411.54',
+  PING_BULK: '64516.13',
+  SET: '63451.78',
+  GET: '64808.82',
+  INCR: '63291.14',
+  LPUSH: '63211.12',
+  RPUSH: '63694.27',
+  LPOP: '63091.48',
+  RPOP: '62814.07',
+  SADD: '63572.79',
+  HSET: '63856.96',
+  SPOP: '66489.37',
+  ZADD: '62735.26',
+  ZPOPMIN: '63613.23',
+  'LPUSH (needed to benchmark LRANGE)': '63291.14',
+  'LRANGE_100 (first 100 elements)': '55803.57',
+  'LRANGE_300 (first 300 elements)': '30330.60',
+  'LRANGE_500 (first 450 elements)': '21353.83',
+  'LRANGE_600 (first 600 elements)': '17079.42',
+  'MSET (10 keys)': '62150.41'
+}
     const fData2 = {
       PING_INLINE: '93023.25',
       PING_BULK: '96153.85',
@@ -67,6 +67,7 @@
       'MSET (10 keys)': '75987.84'
     }
 
+
     const labels = [
       'SET',
       'GET',
@@ -79,14 +80,14 @@
     const data1 = {
       labels: labels,
       datasets: [{
-        label: 'Bez Dockera',
+        label: 'bridge',
         backgroundColor: 'rgb(68, 68, 68)',
         borderColor: 'rgb(0, 0, 0,1)',
         borderSkipped: false,
         borderWidth: 0,
         data: fData1,
       }, {
-        label: 'Z Dockerem',
+        label: 'host',
         backgroundColor: 'rgb(92, 92, 92)',
         borderColor: 'rgb(0, 0, 0,1)',
         borderWidth: 0,

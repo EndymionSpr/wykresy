@@ -1,20 +1,20 @@
-PING_INLINE: 21592.05 requests per second
-PING_BULK: 27073.37 requests per second
-SET: 27051.40 requests per second
-GET: 27070.93 requests per second
-INCR: 27029.46 requests per second
-LPUSH: 27048.96 requests per second
-RPUSH: 27007.56 requests per second
-LPOP: 27073.37 requests per second
-RPOP: 27066.04 requests per second
-SADD: 27090.48 requests per second
-HSET: 27014.86 requests per second
-SPOP: 27144.41 requests per second
-ZADD: 27102.72 requests per second
-ZPOPMIN: 27092.93 requests per second
-LPUSH (needed to benchmark LRANGE): 26975.99 requests per second
-LRANGE_100 (first 100 elements): 19181.59 requests per second
-LRANGE_300 (first 300 elements): 8822.75 requests per second
-LRANGE_500 (first 450 elements): 6597.47 requests per second
-LRANGE_600 (first 600 elements): 5230.58 requests per second
-MSET (10 keys): 27066.04 requests per second
+PING_INLINE: 24660.91 requests per second
+PING_BULK: 28628.69 requests per second
+SET: 22851.92 requests per second
+GET: 26089.22 requests per second
+INCR: 22851.92 requests per second
+LPUSH: 22055.58 requests per second
+RPUSH: 21848.37 requests per second
+LPOP: 22237.04 requests per second
+RPOP: 22361.36 requests per second
+SADD: 26041.67 requests per second
+HSET: 21758.05 requests per second
+SPOP: 24943.88 requests per second
+ZADD: 22904.26 requests per second
+ZPOPMIN: 24919.01 requests per second
+LPUSH (needed to benchmark LRANGE): 21312.87 requests per second
+LRANGE_100 (first 100 elements): 18122.51 requests per second
+LRANGE_300 (first 300 elements): 11633.32 requests per second
+LRANGE_500 (first 450 elements): 9621.86 requests per second
+LRANGE_600 (first 600 elements): 8057.37 requests per second
+MSET (10 keys): 19338.62 requests per second
